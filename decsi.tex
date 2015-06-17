@@ -1,0 +1,115 @@
+\documentclass{beamer}
+
+%%%%%%%%%%%%%%%%%%%% Package declarations %%%%%%%%%%%%%%%%
+
+%\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{graphics}
+\usepackage{graphicx} 
+\usepackage{mathptmx}
+\usepackage[scaled=.90]{helvet}
+\usepackage{courier}
+\usepackage{listings}
+\usepackage{tikz}
+\usepackage[T1]{fontenc}
+\usepackage{bussproofs}
+
+\mode<presentation>
+{
+\usetheme{Boadilla}
+
+\setbeamercovered{transparent}
+}
+\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{frametitle}
+{
+\vspace{0.5cm}\LARGE\insertframetitle\par
+}
+
+\usetikzlibrary{decorations.pathmorphing} % noisy shapes
+\usetikzlibrary{fit}					% fitting shapes to coordinates
+\usetikzlibrary{backgrounds}	% drawing the background after the foreground
+\usetikzlibrary{positioning}
+
+\definecolor{listinggray}{gray}{0.9}
+\lstset{
+	tabsize=2,
+	numbers=left,
+	numbersep=5pt,
+	xleftmargin=15pt,
+	framexleftmargin=15pt,
+	rulecolor=,
+	numberstyle=\scriptsize,
+	captionpos=b,
+	mathescape=true,
+        basicstyle=\footnotesize,
+        columns=fixed,
+        basewidth=0.54em,
+        showstringspaces=false,
+        extendedchars=true,
+        breaklines=true,
+        prebreak = \raisebox{0ex}[0ex][0ex]{\ensuremath{\hookleftarrow}},
+        frame=none,
+        showtabs=false,
+        showspaces=false,
+        showstringspaces=false,
+        identifierstyle=\ttfamily,
+        keywordstyle=\color[rgb]{0,0,1},
+        commentstyle=\color[rgb]{0.133,0.545,0.133},
+        stringstyle=\color[rgb]{0.627,0.126,0.941},
+}
+
+%%%%%%%%%%%%%%%%%%%% New commands declarations %%%%%%%%%%%%
+\newcommand{\putat}[3]{\begin{picture}(0,0)(0,0)\put(#1,#2){#3}\end{picture}}
+
+\title[Projetos de Pesquisa]{Grupo de Pesquisa em Linguagens de Programa\c c\~ao, Verifica\c c\~ao e Engenharia de Sistemas}
+
+\author[Lives]{Elton M\'aximo \\ Glauber Cabral \\ Leonardo Reis \\ Rodrigo Ribeiro}
+
+
+\institute[]{
+Departamento de Computa\c c\~ao e Sistemas (DECSI)
+}
+
+\date{18 de Junho, 2015}
+
+\subject{Talks}
+
+\begin{document}
+
+\begin{frame}
+%\putat{-11}{-55}{\includegraphics[width=12.8cm]{img/logo}}
+%\newline \newline \newline
+\titlepage
+\end{frame}
+
+\begin{frame}[t]
+  \frametitle{Projetos}
+  \tableofcontents %[pausesections]
+\end{frame}
+
+\section{Rodrigo'work}
+
+\begin{frame}
+ \frametitle{Espaço do Rodrigo}
+\end{frame}
+
+\section{Modularização e Extensibilidade de Linguagens}
+
+\begin{frame}
+ \frametitle{Espaço do Leonardo}
+\end{frame}
+
+\section{Elton'work}
+
+\begin{frame}
+ \frametitle{Espaço do Elton}
+\end{frame}
+
+\section{Glauber'work}
+
+\begin{frame}
+ \frametitle{Espaço do Glauber}
+\end{frame}
+
+\end{document}
