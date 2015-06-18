@@ -5,6 +5,7 @@
 %\usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{graphics}
+\usepackage[utf8]{inputenc}
 \usepackage{graphicx} 
 \usepackage{mathptmx}
 \usepackage[scaled=.90]{helvet}
@@ -299,10 +300,88 @@ public class Test {
  \end{itemize}
 \end{frame}
 
-\section{Elton'work}
+\section{Rastreio de cadeias de erros em programas}
 
 \begin{frame}
- \frametitle{Espaço do Elton}
+ \frametitle{Quais partes de um sistema podem ser afetadas por um erro ?}
+ \begin{center}
+    \includegraphics[scale=.4]{img/how_to_fix_errors.jpg}
+ \end{center}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Erros podem causar o término de programas !}
+	\begin{columns}[T]
+		\begin{column}{.40\textwidth}
+			\begin{tabular}{c}
+				\includegraphics[scale=.22]{img/HulkSmash.jpg} \\
+			\end{tabular}
+		\end{column}
+		\begin{column}{.60\textwidth}
+			\begin{quote}
+				\begin{itemize}
+				  \item Erros que não "param" o sistema.
+				  \item Erros que causam o término do programa
+				  \begin{itemize}
+				     \item Divisão por zero;
+				     \item Acesso a memória não alocada;
+				  \end{itemize}
+				\end{itemize}
+			\end{quote}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Detectando erros estaticamente - Motivação}
+	\begin{columns}[T]
+		\begin{column}{.35\textwidth}
+			\begin{tabular}{c}
+				\includegraphics[scale=.32]{img/house_of_cards.jpg} \\
+			\end{tabular}
+		\end{column}
+		\begin{column}{.65\textwidth}
+			\begin{quote}
+				\begin{itemize}
+	                           \item Saber onde erros desses tipos acontecem pode ser útil.
+	                           \item Saber o que eles afetam é mais útil ainda (Por que ?).
+	                           \item Se erro não afeta nada "importante", mais ainda causa o termino
+	                                 do programa, o que podemos fazer ?
+				\end{itemize}
+			\end{quote}
+		\end{column}
+	\end{columns}
+\end{frame}
+ 
+\begin{frame}
+ \frametitle{Vigiando erros}
+	\begin{columns}[T]
+		\begin{column}{.35\textwidth}
+			\begin{tabular}{c}
+				\includegraphics[scale=.5]{img/pathStones.jpeg} \\
+			\end{tabular}
+		\end{column}
+		\begin{column}{.65\textwidth}
+			\begin{quote}
+				\begin{itemize}
+				  \item Erros que não "param" o sistema.
+				  \item Erros que causam o término do programa
+				  \begin{itemize}
+				     \item Divisão por zero;
+				     \item Acesso a memória não alocada;
+				  \end{itemize}
+				\end{itemize}
+			\end{quote}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}
+ \frametitle{Quais partes de um sistema podem ser afetadas por um erro ?}
+ \begin{center}
+    \includegraphics[scale=.1]{img/exemplo.jpg}
+ \end{center}
+  Ferramenta disponível em \texttt{http://cuda.dcc.ufmg.br/epd/index.php}
 \end{frame}
 
 \section{Glauber'work}
