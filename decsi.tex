@@ -94,10 +94,129 @@ Departamento de Computa\c c\~ao e Sistemas (DECSI)
  \frametitle{Espaço do Rodrigo}
 \end{frame}
 
-\section{Modularização e Extensibilidade de Linguagens}
+\section{Modularizaçãoo e Extensibilidade de Linguagens}
 
 \begin{frame}
- \frametitle{Espaço do Leonardo}
+  \frametitle{Era da Produtividade}
+%  \putat{200}{-10}{\includegraphics[width=3.8cm]{img/efficiency_01}}
+  \putat{200}{-10}{\includegraphics[width=3.6cm]{img/focus}}
+  \begin{itemize}
+    \item Foco na eficiência do programador
+    \item DSLs como uma alternativa para melhorar a eficiência do programador
+    \item Linguagens extensíveis como mecanismo para implementar e usar DSLs
+  \end{itemize}
+  \putat{5}{-70}{\includegraphics[width=3.5cm]{img/efficiency}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{O que são Linguagens Extensíveis?}
+  \begin{itemize}
+    \item Linguagens extensíveis são linguagens que permitem estender a própria sintaxe concreta
+  \end{itemize}
+    \begin{columns}[!ht]
+    \begin{column}{5.5cm}
+\begin{lstlisting}[language=java,
+                   frame=bottomline,title={SugarJ defining syntax}]
+package syntactic;
+public sugar Pair {
+  context-free syntax
+   "("JavaType "," JavaType")" 
+        $\rightarrow$ $\alert<1>{JavaType}$
+   "("JavaExpr "," JavaExpr")" 
+        $\rightarrow$ $\alert<2>{JavaExpr}$
+  ...
+}
+\end{lstlisting}
+    \end{column}
+    \begin{column}{5.5cm}
+\begin{lstlisting}[language=java,frame=bottomline,title={Using Pair syntax},escapechar=\%]
+import syntactic.Pair;
+public class Test {
+ private $\alert<1>{(String, Integer)}$ p 
+               = %\alert<2>{("12", 34)}%;
+}
+\end{lstlisting}
+    \end{column}
+  \end{columns}
+\end{frame}
+
+\defverbatim[colored]\sugarj{
+    \begin{columns}[!ht]
+    \begin{column}{5.5cm}
+\begin{lstlisting}[language=java,
+                   frame=bottomline,title={SugarJ defining syntax}]
+package syntactic;
+public sugar Pair {
+  context-free syntax
+   "("JavaType "," JavaType")" 
+        $\rightarrow$ JavaType
+   "("JavaExpr "," JavaExpr")" 
+        $\rightarrow$ JavaExpr
+  ...
+}
+\end{lstlisting}
+    \end{column}
+    \begin{column}{5.5cm}
+\begin{lstlisting}[language=java,frame=bottomline,title={Using Pair syntax},escapechar=\%]
+%\alert{import syntactic.Pair;}%
+public class Test {
+ private (String, Integer) p 
+               = ("12", 34);
+}
+\end{lstlisting}
+    \end{column}
+  \end{columns}
+}
+
+\begin{frame}[fragile]
+  \frametitle{Como Essas Características Dinâmicas Afetam o Parsing?}
+  \begin{itemize}
+    \item Necessidade de modificar o parser de forma dinâmica, durante a análise da entrada
+  \end{itemize}
+  \sugarj
+\end{frame}
+
+\begin{frame}
+  \frametitle{As Teorias de Parsing Suportam Modificação Dinâmica?}
+  \begin{itemize}
+    \item Principais avanços recentes na área não tratam de modificações dinâmicas
+      \begin{itemize}
+        \item PEG, LL(*), Adaptative LL(*), SGLR, YAKKER
+      \end{itemize}
+    \item Trabalhos que lidam com modificação dinâmica das regras têm eficiência questionável ou não apresentam algoritmos de parsing
+      \begin{itemize}
+        \item Adaptable Grammar de Christiansen; RAG; Parsing Reflective Grammars;
+        \item AMG; Dynamic Grammars; Evolving Grammars
+      \end{itemize}
+  \end{itemize}
+  %\hspace{9cm} \includegraphics[width=2.5cm]{img/question.jpg}
+  \putat{270}{-60}{\includegraphics[width=2.5cm]{img/question.jpg}}
+\end{frame}
+
+\begin{frame}[fragile]
+  \frametitle{Adaptable Parsing Expression Grammars}
+  \begin{itemize}
+   \item Extensão de Parsing Expression Grammar;
+   \item Modelo que permite modificações no conjunto de regras dinamicamente.
+  \end{itemize}
+  \putat{220}{45}{\includegraphics[width=4cm]{img/efficiency_01}}
+  \putat{10}{-100}{\includegraphics[width=4cm]{img/camaleao}}
+  \putat{220}{-90}{\includegraphics[width=4cm]{img/adapt}}
+\end{frame}
+
+\begin{frame}
+ \frametitle{A Pesquisa}
+ \begin{itemize}
+  \item Desenvolvimento de um gerador automático de analisador sintático baseado em APEG:
+   \begin{itemize}
+    \item Implementação eficiente;
+    \item Tratamento de erros;
+    \item Construção automática de AST e metaprogramação;
+    \item provas de propriedades;
+   \end{itemize}
+  \item Análise (métrica) de uso de DSLs em sistema reais;
+  \item Estudo de formalismos e mecanismo para especificação modular de linguagens
+ \end{itemize}
 \end{frame}
 
 \section{Elton'work}
