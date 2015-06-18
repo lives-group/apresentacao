@@ -2,10 +2,10 @@
 
 %%%%%%%%%%%%%%%%%%%% Package declarations %%%%%%%%%%%%%%%%
 
-%\usepackage[utf8]{inputenc}
+\usepackage[utf8]{inputenc}
 \usepackage[brazil]{babel}
 \usepackage{graphics}
-\usepackage{graphicx} 
+\usepackage{graphicx}
 \usepackage{mathptmx}
 \usepackage[scaled=.90]{helvet}
 \usepackage{courier}
@@ -22,7 +22,7 @@
 
 \setbeamercovered{transparent}
 }
-\setbeamertemplate{navigation symbols}{} 
+\setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{frametitle}
 {
 \vspace{0.5cm}\LARGE\insertframetitle\par
@@ -90,15 +90,15 @@ Departamento de Computa\c c\~ao e Sistemas (DECSI)
   \tableofcontents %[pausesections]
 \end{frame}
 
-\section{Desenvolvimento de Software Correto por ConstruÁ„o}
+\section{Desenvolvimento de Software Correto por Constru√ß√£o}
 
 \begin{frame}
  \frametitle{Software por toda parte!}
-  \includegraphics[scale=0.5]{img/everywhere} 
+  \includegraphics[scale=0.5]{img/everywhere}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Testes e CorreÁ„o de Software}
+  \frametitle{Testes e Corre√ß√£o de Software}
 	\begin{columns}[T]
 		\begin{column}{.35\textwidth}
 			\begin{tabular}{c}
@@ -114,8 +114,8 @@ Departamento de Computa\c c\~ao e Sistemas (DECSI)
 \end{frame}
 
 \begin{frame}
-   \frametitle{VerificaÁ„o Formal}
-   \includegraphics[scale=0.5]{img/hoarelogic} 
+   \frametitle{Verifica√ß√£o Formal}
+   \includegraphics[scale=0.5]{img/hoarelogic}
 \end{frame}
 
 \begin{frame}
@@ -132,7 +132,7 @@ Departamento de Computa\c c\~ao e Sistemas (DECSI)
                           \\ \\
                         \infer[_{(TApp)}]{\Gamma\,\vdash\,e\:e' :\tau}
                                              {\Gamma\,\vdash\,e :\tau'
-                                               \to \tau & 
+                                               \to \tau &
                                               \Gamma\,\vdash\,e':\tau'}
                        \end{array}
                    \]
@@ -144,49 +144,49 @@ Departamento de Computa\c c\~ao e Sistemas (DECSI)
                                   reduce program's weirdness.}
 			\end{quote}
 		\end{column}
-	\end{columns}  
+	\end{columns}
 \end{frame}
 
 \begin{frame}
-  \frametitle{Pesquisa: AplicaÁıes de Teoria de Tipos}
+  \frametitle{Pesquisa: Aplica√ß√µes de Teoria de Tipos}
   \begin{itemize}
-      \item Software correto por construÁ„o.
+      \item Software correto por constru√ß√£o.
       \begin{itemize}
-           \item EspecificaÁıes expressas como tipos. VerificaÁ„o de
-             correÁ„o feita pelo compilador.
+           \item Especifica√ß√µes expressas como tipos. Verifica√ß√£o de
+             corre√ß√£o feita pelo compilador.
            \item Trabalhos realizados: Intepretadores, algoritmos e
              estruturas de dados.
-           \item Em andamento: Sistemas de tipos para verificaÁ„o de
+           \item Em andamento: Sistemas de tipos para verifica√ß√£o de
              propriedades de sistemas embarcados.
       \end{itemize}
-      \item FormalizaÁ„o
+      \item Formaliza√ß√£o
       \begin{itemize}
-           \item Uso de assistentes de provas para demonstraÁ„o de
+           \item Uso de assistentes de provas para demonstra√ß√£o de
             propriedades de formalismos como sistemas de tipos.
-            \item ConstruÁ„o de provas de terminaÁ„o de algoritmos sem
+            \item Constru√ß√£o de provas de termina√ß√£o de algoritmos sem
               efeitos colaterais em linguagens funcionais.
       \end{itemize}
   \end{itemize}
 \end{frame}
 
-\section{ModularizaÁ„o e Extensibilidade de Linguagens}
+\section{Modulariza√ß√£o e Extensibilidade de Linguagens}
 
 \begin{frame}
   \frametitle{Era da Produtividade}
 %  \putat{200}{-10}{\includegraphics[width=3.8cm]{img/efficiency_01}}
   \putat{200}{-10}{\includegraphics[width=3.6cm]{img/focus}}
   \begin{itemize}
-    \item Foco na eficiÍncia do programador
-    \item DSLs como uma alternativa para melhorar a eficiÍncia do programador
-    \item Linguagens extensÌveis como mecanismo para implementar e usar DSLs
+    \item Foco na efici√™ncia do programador
+    \item DSLs como uma alternativa para melhorar a efici√™ncia do programador
+    \item Linguagens extens√≠veis como mecanismo para implementar e usar DSLs
   \end{itemize}
   \putat{5}{-70}{\includegraphics[width=3.5cm]{img/efficiency}}
 \end{frame}
 
 \begin{frame}[fragile]
-  \frametitle{O que s„o Linguagens ExtensÌveis?}
+  \frametitle{O que s√£o Linguagens Extens√≠veis?}
   \begin{itemize}
-    \item Linguagens extensÌveis s„o linguagens que permitem estender a prÛpria sintaxe concreta
+    \item Linguagens extens√≠veis s√£o linguagens que permitem estender a pr√≥pria sintaxe concreta
   \end{itemize}
     \begin{columns}[!ht]
     \begin{column}{5.5cm}
@@ -195,9 +195,9 @@ Departamento de Computa\c c\~ao e Sistemas (DECSI)
 package syntactic;
 public sugar Pair {
   context-free syntax
-   "("JavaType "," JavaType")" 
+   "("JavaType "," JavaType")"
         $\rightarrow$ $\alert<1>{JavaType}$
-   "("JavaExpr "," JavaExpr")" 
+   "("JavaExpr "," JavaExpr")"
         $\rightarrow$ $\alert<2>{JavaExpr}$
   ...
 }
@@ -207,7 +207,7 @@ public sugar Pair {
 \begin{lstlisting}[language=java,frame=bottomline,title={Using Pair syntax},escapechar=\%]
 import syntactic.Pair;
 public class Test {
- private $\alert<1>{(String, Integer)}$ p 
+ private $\alert<1>{(String, Integer)}$ p
                = %\alert<2>{("12", 34)}%;
 }
 \end{lstlisting}
@@ -223,9 +223,9 @@ public class Test {
 package syntactic;
 public sugar Pair {
   context-free syntax
-   "("JavaType "," JavaType")" 
+   "("JavaType "," JavaType")"
         $\rightarrow$ JavaType
-   "("JavaExpr "," JavaExpr")" 
+   "("JavaExpr "," JavaExpr")"
         $\rightarrow$ JavaExpr
   ...
 }
@@ -235,7 +235,7 @@ public sugar Pair {
 \begin{lstlisting}[language=java,frame=bottomline,title={Using Pair syntax},escapechar=\%]
 %\alert{import syntactic.Pair;}%
 public class Test {
- private (String, Integer) p 
+ private (String, Integer) p
                = ("12", 34);
 }
 \end{lstlisting}
@@ -244,21 +244,21 @@ public class Test {
 }
 
 \begin{frame}[fragile]
-  \frametitle{Como Essas CaracterÌsticas Din‚micas Afetam o Parsing?}
+  \frametitle{Como Essas Caracter√≠sticas Din√¢micas Afetam o Parsing?}
   \begin{itemize}
-    \item Necessidade de modificar o parser de forma din‚mica, durante a an·lise da entrada
+    \item Necessidade de modificar o parser de forma din√¢mica, durante a an√°lise da entrada
   \end{itemize}
   \sugarj
 \end{frame}
 
 \begin{frame}
-  \frametitle{As Teorias de Parsing Suportam ModificaÁ„o Din‚mica?}
+  \frametitle{As Teorias de Parsing Suportam Modifica√ß√£o Din√¢mica?}
   \begin{itemize}
-    \item Principais avanÁos recentes na ·rea n„o tratam de modificaÁıes din‚micas
+    \item Principais avan√ßos recentes na √°rea n√£o tratam de modifica√ß√µes din√¢micas
       \begin{itemize}
         \item PEG, LL(*), Adaptative LL(*), SGLR, YAKKER
       \end{itemize}
-    \item Trabalhos que lidam com modificaÁ„o din‚mica das regras tÍm eficiÍncia question·vel ou n„o apresentam algoritmos de parsing
+    \item Trabalhos que lidam com modifica√ß√£o din√¢mica das regras t√™m efici√™ncia question√°vel ou n√£o apresentam algoritmos de parsing
       \begin{itemize}
         \item Adaptable Grammar de Christiansen; RAG; Parsing Reflective Grammars;
         \item AMG; Dynamic Grammars; Evolving Grammars
@@ -271,8 +271,8 @@ public class Test {
 \begin{frame}[fragile]
   \frametitle{Adaptable Parsing Expression Grammars}
   \begin{itemize}
-   \item Extens„o de Parsing Expression Grammar;
-   \item Modelo que permite modificaÁıes no conjunto de regras dinamicamente.
+   \item Extens√£o de Parsing Expression Grammar;
+   \item Modelo que permite modifica√ß√µes no conjunto de regras dinamicamente.
   \end{itemize}
   \putat{220}{45}{\includegraphics[width=4cm]{img/efficiency_01}}
   \putat{10}{-100}{\includegraphics[width=4cm]{img/camaleao}}
@@ -282,19 +282,19 @@ public class Test {
 \begin{frame}
  \frametitle{A Pesquisa}
  \begin{itemize}
-  \item Desenvolvimento de um gerador autom·tico de analisador sint·tico baseado em APEG:
+  \item Desenvolvimento de um gerador autom√°tico de analisador sint√°tico baseado em APEG:
    \begin{itemize}
-    \item ImplementaÁ„o eficiente;
+    \item Implementa√ß√£o eficiente;
     \item Tratamento de erros;
-    \item ConstruÁ„o autom·tica de AST e metaprogramaÁ„o;
+    \item Constru√ß√£o autom√°tica de AST e metaprograma√ß√£o;
     \item provas de propriedades;
    \end{itemize}
-  \item An·lise (mÈtricas) de uso de DSLs em sistemas;
-  \item Formalismos e mecanismos para especificaÁ„o modular de linguagens
+  \item An√°lise (m√©tricas) de uso de DSLs em sistemas;
+  \item Formalismos e mecanismos para especifica√ß√£o modular de linguagens
    \begin{itemize}
-    \item o que È modularizaÁ„o no contexto de especificaÁ„o de linguagens?
-    \item especificaÁ„o de sintaxe e sem‚ntica;
-    \item implementaÁ„o de DSLs como bibliotecas.
+    \item o que √© modulariza√ß√£o no contexto de especifica√ß√£o de linguagens?
+    \item especifica√ß√£o de sintaxe e sem√¢ntica;
+    \item implementa√ß√£o de DSLs como bibliotecas.
    \end{itemize}
  \end{itemize}
 \end{frame}
@@ -302,13 +302,13 @@ public class Test {
 \section{Elton'work}
 
 \begin{frame}
- \frametitle{EspaÁo do Elton}
+ \frametitle{Espa√ßo do Elton}
 \end{frame}
 
 \section{Glauber'work}
 
 \begin{frame}
- \frametitle{EspaÁo do Glauber}
+ \frametitle{Espa√ßo do Glauber}
 \end{frame}
 
 \end{document}
