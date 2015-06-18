@@ -13,7 +13,8 @@
 \usepackage{ragged2e}
 \usepackage{tikz}
 \usepackage[T1]{fontenc}
-\usepackage{bussproofs}
+%\usepackage{bussproofs}
+\usepackage{proof}
 
 \mode<presentation>
 {
@@ -119,6 +120,53 @@ Departamento de Computa\c c\~ao e Sistemas (DECSI)
 
 \begin{frame}
   \frametitle{Teoria de Tipos}
+	\begin{columns}[T]
+		\begin{column}{.5\textwidth}
+                   \[
+                        \begin{array}{c}
+                        \infer[_{(TVar)}]{\Gamma\,\vdash\,x : \tau}
+                                             {x: \sigma \in \Gamma &
+                                                                     \tau
+                                                                     \sqsubseteq
+                                                                     \sigma}
+                          \\ \\
+                        \infer[_{(TApp)}]{\Gamma\,\vdash\,e\:e' :\tau}
+                                             {\Gamma\,\vdash\,e :\tau'
+                                               \to \tau & 
+                                              \Gamma\,\vdash\,e':\tau'}
+                       \end{array}
+                   \]
+		\end{column}
+		\begin{column}{.5\textwidth}
+			\begin{quote}
+				\justifying {\textbf{Testing} can
+                                  prove the absence of bugs, if we
+                                  reduce program's weirdness.}
+			\end{quote}
+		\end{column}
+	\end{columns}  
+\end{frame}
+
+\begin{frame}
+  \frametitle{Pesquisa: Aplicações de Teoria de Tipos}
+  \begin{itemize}
+      \item Software correto por construção.
+      \begin{itemize}
+           \item Especificações expressas como tipos. Verificação de
+             correção feita pelo compilador.
+           \item Trabalhos realizados: Intepretadores, algoritmos e
+             estruturas de dados.
+           \item Em andamento: Sistemas de tipos para verificação de
+             propriedades de sistemas embarcados.
+      \end{itemize}
+      \item Formalização
+      \begin{itemize}
+           \item Uso de assistentes de provas para demonstração de
+            propriedades de formalismos como sistemas de tipos.
+            \item Construção de provas de terminação de algoritmos sem
+              efeitos colaterais em linguagens funcionais.
+      \end{itemize}
+  \end{itemize}
 \end{frame}
 
 \section{Modularização e Extensibilidade de Linguagens}
